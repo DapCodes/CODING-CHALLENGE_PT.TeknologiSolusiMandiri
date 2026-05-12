@@ -117,5 +117,67 @@ npm run dev
 
 ---
 
-## 💎 Acknowledgments
+## 🧠 Q&A - Technical Documentation
+
+### **I. Database Design Questions**
+
+#### **1. What database tables did you create and why?**
+- **Table `Categories`**: Stores category definitions (`id`, `name`, `color`). This allows users to group tasks logically. Separation into a distinct table ensures data normalization.
+- **Table `Todos`**: Stores the actual tasks (`id`, `title`, `description`, `is_done`, `priority`, `category_id`, etc.). This is the core data of the application.
+- **Relationships**: A **One-to-Many** relationship exists between `Categories` and `Todos`. One category can be assigned to multiple todos, but each todo belongs to exactly one category. This is implemented via a Foreign Key (`category_id`) in the `Todos` table.
+- **Choice of Structure**: This structure follows 3rd Normal Form (3NF), minimizing data redundancy and making it extremely easy to filter tasks by category without string manipulation.
+
+#### **2. How did you handle pagination and filtering in the database?**
+- **Filtering/Sorting**: I used Sequelize's `Op` (Operators) to handle dynamic queries. For title searching, I used `Op.iLike` (case-insensitive search). For status and priority, I used exact matches in the `where` clause.
+- **Efficient Pagination**: I implemented the `limit` and `offset` pattern. The frontend sends `page` and `limit` parameters; the backend calculates `offset = (page - 1) * limit`. This ensures we only fetch a small subset of data from the database at a time.
+- **Indexes**: Primary keys are indexed automatically. I also ensured an index exists on `category_id` in the `Todos` table to speed up JOIN operations and filtering by category.
+
+---
+
+### **II. Technical Decision Questions**
+
+#### **1. How did you implement responsive design?**
+- **Breakpoints**: I utilized Ant Design's standard breakpoints (xs: <576px, sm: 576px, md: 768px, lg: 992px, xl: 1200px).
+- **Adaptation**: On mobile, the filter sidebar transforms into a top-down layout or a drawer, and the Todo list transitions from a multi-column grid to a single vertical stack.
+- **Ant Design Help**: Components like `<Row>`, `<Col>`, and the `useBreakpoint` hook were instrumental in creating a fluid, responsive layout without writing heavy custom media queries.
+
+#### **2. How did you structure your React components?**
+- **Hierarchy**:
+  - `App.tsx` (Wrappers & Providers)
+  - `TodoContext` / `CategoryContext` (Global State)
+  - `MainLayout` (Navbar & Container)
+  - `TodoPage` (The main view composed of `FilterSider`, `TodoForm`, and `TodoList`)
+- **State Management**: I chose the **Context API** for global state. This prevents "prop drilling" and allows components deep in the tree (like a Todo Item) to trigger a refresh of the list easily.
+- **Filtering State**: Filters are stored as an object in the `TodoContext`. Every time a filter changes, the context triggers a new API call and updates the data for the entire app.
+
+#### **3. What backend architecture did you choose and why?**
+- **Architecture**: A Layered MVC-like architecture.
+- **Organization**:
+  - `Routes`: Handle endpoint definitions.
+  - `Controllers`: Handle HTTP-specific logic (parsing params, sending responses).
+  - `Services`: Handle business logic and Sequelize queries. This keeps the controllers thin and tests easy to write.
+- **Error Handling**: A centralized `errorHandler` middleware. Using a global handler ensures that all errors return a consistent JSON format (`{ success: false, message: "..." }`) and logs the stack trace in development.
+
+#### **4. How did you handle data validation?**
+- **Location**: Both sides. Ant Design handles immediate feedback on the frontend, while `express-validator` secures the backend.
+- **Rules**: Todos must have a non-empty title (max 100 chars), valid priority tags ('low', 'medium', 'high'), and correct Foreign Keys for categories.
+- **Reasoning**: Validating in the backend is non-negotiable for security, while frontend validation provides a smooth, "zero-latency" UX.
+
+---
+
+### **III. Testing & Quality Questions**
+
+#### **1. What did you choose to unit test and why?**
+- **Scope**: Core Service functions (CRUD operations) and Health Check endpoints.
+- **Edge Cases**: I tested behavior when fetching page numbers that don't exist, creating todos with invalid category IDs, and searching for non-existent keywords.
+- **Structure**: I used **Jest** with **Supertest** for the backend to ensure endpoints return the correct status codes and data structures.
+
+#### **2. If you had more time, what would you improve or add?**
+- **Technical Debt**: Improve TypeScript interface strictness and implement a proper database migration runner (like Umzug).
+- **Features**: Implement User Authentication (JWT), Drag-and-Drop task ordering, and a "Dark Mode" toggle.
+- **Refactoring**: Move from a monolithic backend structure to a more modular "Domain-Driven" folder structure if the project grows.
+
+---
+
+### **💎 Acknowledgments**
 Project developed by **Daffa Ramadhan Maulana** for the PT.TeknologiSolusiMandiri Coding Challenge. The architecture follows industry best practices for separation of concerns and cloud deployment.
