@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ==========================================
+   NEO BRUTALISM DESIGN SYSTEM
+   Colors: Blue (#2563eb), White (#fff), Black (#000)
+   ========================================== */
+
+:root {
+  --neo-blue: #2563eb;
+  --neo-blue-light: #3b82f6;
+  --neo-blue-lighter: #dbeafe;
+  --neo-black: #000000;
+  --neo-white: #ffffff;
+  --neo-gray: #f5f5f5;
+  --neo-shadow: 3px 3px 0px #000;
+  --neo-shadow-sm: 2px 2px 0px #000;
+  --neo-shadow-lg: 5px 5px 0px #000;
+  --neo-border: 3px solid #000;
+  --neo-border-sm: 2px solid #000;
+  --neo-transition: all 0.15s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--neo-gray);
+  color: var(--neo-black);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
+.neo-layout {
+  min-height: 100vh;
+  background: var(--neo-gray) !important;
+}
+
+.neo-header {
+  background: var(--neo-white) !important;
+  border-bottom: var(--neo-border) !important;
+  padding: 0 !important;
+  height: auto !important;
+  line-height: normal !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.neo-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  gap: 16px;
+}
+
+.neo-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.neo-logo-icon {
+  font-size: 24px;
+}
+
+.neo-logo-text {
+  margin: 0 !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px;
+  font-size: 16px !important;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.neo-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.neo-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: var(--neo-border-sm);
+  background: var(--neo-white);
+  color: var(--neo-black);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--neo-transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.neo-nav-btn:hover {
+  background: var(--neo-blue-lighter);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.neo-nav-btn.active {
+  background: var(--neo-blue);
+  color: var(--neo-white);
+  box-shadow: var(--neo-shadow-sm);
+  transform: translate(-2px, -2px);
+}
+
+.neo-nav-btn.active:hover {
+  background: var(--neo-blue-light);
+}
+
+.neo-content {
+  padding: 0 !important;
+  background: var(--neo-gray) !important;
+}
+
+.neo-content-inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* ==========================================
+   PAGE
+   ========================================== */
+
+.neo-page {
+  width: 100%;
+}
+
+.neo-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.neo-page-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.neo-page-title {
+  margin: 0 !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  letter-spacing: -1px;
+}
+
+.neo-page-subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.neo-divider {
+  height: 3px;
+  background: var(--neo-black);
+  margin: 20px 0;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.neo-btn {
+  border: var(--neo-border-sm) !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--neo-transition) !important;
+  border-radius: 0 !important;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: var(--neo-shadow-sm) !important;
+}
+
+.neo-btn:active {
+  transform: translate(0, 0) !important;
+  box-shadow: none !important;
+}
+
+.neo-btn-primary {
+  background: var(--neo-blue) !important;
+  color: var(--neo-white) !important;
+  border-color: var(--neo-black) !important;
+}
+
+.neo-btn-primary:hover {
+  background: var(--neo-blue-light) !important;
+}
+
+.neo-btn-outline {
+  background: var(--neo-white) !important;
+  color: var(--neo-black) !important;
+}
+
+.neo-btn-outline:hover {
+  background: var(--neo-blue-lighter) !important;
+}
+
+/* ==========================================
+   FILTERS
+   ========================================== */
+
+.neo-filters {
+  background: var(--neo-white);
+  border: var(--neo-border);
+  padding: 16px;
+  box-shadow: var(--neo-shadow);
+}
+
+/* ==========================================
+   TODO LIST
+   ========================================== */
+
+.neo-todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.neo-todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--neo-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  transition: var(--neo-transition);
+}
+
+.neo-todo-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-lg);
+}
+
+.neo-todo-item.neo-todo-completed {
+  opacity: 0.7;
+  background: var(--neo-gray);
+}
+
+.neo-todo-item.neo-todo-completed .neo-todo-title {
+  color: #888;
+}
+
+.neo-todo-checkbox {
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.neo-todo-checkbox .ant-checkbox-inner {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  width: 22px;
+  height: 22px;
+}
+
+.neo-todo-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background: var(--neo-blue) !important;
+  border-color: var(--neo-black) !important;
+}
+
+.neo-todo-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.neo-todo-title-row {
+  margin-bottom: 4px;
+}
+
+.neo-todo-title {
+  font-size: 16px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.neo-todo-title.completed {
+  color: #999 !important;
+}
+
+.neo-todo-description {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.neo-todo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* ==========================================
+   BADGES
+   ========================================== */
+
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border: var(--neo-border-sm);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: var(--neo-white);
+}
+
+.neo-priority-high {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.neo-priority-medium {
+  background: var(--neo-blue-lighter);
+  color: var(--neo-blue);
+  border-color: var(--neo-black);
+}
+
+.neo-priority-low {
+  background: var(--neo-white);
+  color: var(--neo-black);
+  border-color: var(--neo-black);
+}
+
+.neo-badge-category {
+  background: var(--neo-blue);
+  color: var(--neo-white);
+  border-color: var(--neo-black);
+}
+
+.neo-badge-date {
+  background: var(--neo-white);
+  color: var(--neo-black);
+}
+
+.neo-badge-overdue {
+  background: var(--neo-black);
+  color: var(--neo-white);
+  border-color: var(--neo-black);
+  animation: neo-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes neo-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ==========================================
+   ACTIONS
+   ========================================== */
+
+.neo-todo-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.neo-action-btn {
+  border: var(--neo-border-sm) !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--neo-white) !important;
+  border-radius: 0 !important;
+  transition: var(--neo-transition) !important;
+}
+
+.neo-action-btn:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2px 2px 0px #000 !important;
+  background: var(--neo-blue-lighter) !important;
+}
+
+.neo-action-delete:hover {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* ==========================================
+   CATEGORY LIST
+   ========================================== */
+
+.neo-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.neo-category-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--neo-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  transition: var(--neo-transition);
+}
+
+.neo-category-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-lg);
+}
+
+.neo-category-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.neo-category-color {
+  width: 28px;
+  height: 28px;
+  border: var(--neo-border);
+  flex-shrink: 0;
+}
+
+.neo-category-name {
+  display: block;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.neo-category-date {
+  display: block;
+  font-size: 12px !important;
+}
+
+.neo-category-color-code {
+  flex-shrink: 0;
+}
+
+.neo-color-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border: var(--neo-border-sm);
+  color: #fff;
+  font-size: 11px;
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 600;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+.neo-category-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   PAGINATION
+   ========================================== */
+
+.neo-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 12px 16px;
+  background: var(--neo-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow-sm);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.neo-pagination-info {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.neo-pagination .ant-pagination-item {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  font-weight: 600;
+}
+
+.neo-pagination .ant-pagination-item-active {
+  background: var(--neo-blue) !important;
+  border-color: var(--neo-black) !important;
+}
+
+.neo-pagination .ant-pagination-item-active a {
+  color: var(--neo-white) !important;
+}
+
+.neo-pagination .ant-pagination-prev .ant-pagination-item-link,
+.neo-pagination .ant-pagination-next .ant-pagination-item-link {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+}
+
+/* ==========================================
+   LOADING & EMPTY
+   ========================================== */
+
+.neo-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: var(--neo-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+}
+
+.neo-empty {
+  padding: 48px 20px;
+  background: var(--neo-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  text-align: center;
+}
+
+/* ==========================================
+   MODAL
+   ========================================== */
+
+.neo-modal .ant-modal-content {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow-lg) !important;
+}
+
+.neo-modal .ant-modal-header {
+  border-bottom: var(--neo-border) !important;
+  border-radius: 0 !important;
+}
+
+.neo-modal .ant-modal-footer {
+  border-top: var(--neo-border) !important;
+}
+
+.neo-modal-title {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   FORM
+   ========================================== */
+
+.neo-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.neo-input,
+.neo-form .ant-input,
+.neo-form .ant-input-affix-wrapper,
+.neo-form textarea.ant-input {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  font-family: inherit !important;
+}
+
+.neo-form .ant-input:focus,
+.neo-form .ant-input-affix-wrapper:focus,
+.neo-form .ant-input-affix-wrapper-focused {
+  box-shadow: var(--neo-shadow-sm) !important;
+  border-color: var(--neo-blue) !important;
+}
+
+.neo-select .ant-select-selector,
+.neo-form .ant-select-selector {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+}
+
+.neo-form .ant-picker {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+}
+
+/* ==========================================
+   ANT DESIGN OVERRIDES FOR NEO BRUTALISM
+   ========================================== */
+
+.ant-input-search .ant-input-search-button {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  border-left: none !important;
+  background: var(--neo-blue) !important;
+  color: var(--neo-white) !important;
+}
+
+.ant-select-selector {
+  border-radius: 0 !important;
+}
+
+.ant-select-dropdown {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+}
+
+.ant-popover-inner,
+.ant-popconfirm .ant-popover-inner {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+}
+
+.ant-message-notice-content {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+  font-weight: 600;
+}
+
+.ant-picker-dropdown {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+  padding: 0 !important;
+  z-index: 10000 !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+.neo-modal .ant-btn+.ant-btn {
+  margin-left: 12px !important;
+}
+
+.ant-picker-panel-container {
+  border-radius: 0 !important;
+  background: var(--neo-white) !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.ant-picker-panel {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.ant-picker-header {
+  border-bottom: var(--neo-border-sm) !important;
+  padding: 8px !important;
+}
+
+.ant-picker-footer {
+  border-top: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  padding: 8px !important;
+}
+
+.ant-picker-content th,
+.ant-picker-content td {
+  border-radius: 0 !important;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: var(--neo-blue) !important;
+  border: 1px solid #000 !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+}
+
+.ant-picker-today-btn,
+.ant-picker-now-btn {
+  color: var(--neo-blue) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.ant-picker-cell:hover .ant-picker-cell-inner {
+  background: var(--neo-blue-lighter) !important;
+  border-radius: 0 !important;
+}
+
+.ant-btn-primary.ant-btn-sm {
+  border: var(--neo-border-sm) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow-sm) !important;
+  background: var(--neo-blue) !important;
+  font-weight: 700 !important;
+  height: auto !important;
+  padding: 2px 12px !important;
+}
+
+/* Cleaner looking cards */
+.neo-todo-item {
+  border-width: 2px !important;
+}
+
+.neo-filters {
+  border-width: 2px !important;
+}
+
+.neo-header {
+  border-bottom-width: 2px !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN SYSTEM
+   ========================================== */
+
+/* Tablet & Smaller */
+@media (max-width: 768px) {
+  .neo-header-inner {
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .neo-nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .neo-nav-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 11px;
+    height: 40px;
+  }
+
+  .neo-content-inner {
+    padding: 20px 16px;
+  }
+
+  .neo-page-header {
+    text-align: left !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100%;
+    gap: 12px !important;
+  }
+
+  .neo-page-title {
+    font-size: 22px !important;
+  }
+
+  .neo-todo-item, .neo-category-item {
+    flex-wrap: wrap;
+  }
+
+  .neo-todo-actions, .neo-category-actions {
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+  }
+}
+
+/* Mobile & Smaller */
+@media (max-width: 576px) {
+  .neo-page-header {
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+  
+  .neo-filters {
+    padding: 12px;
+  }
+
+  .neo-logo-text {
+    font-size: 14px !important;
+  }
+  
+  .neo-pagination {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Ultra-Compact Mobile (Keep Labels) */
+@media (max-width: 480px) {
+  .neo-nav-btn {
+    min-width: 0;
+    height: 40px;
+    padding: 6px 10px !important;
+    gap: 4px !important;
+    font-size: 11px !important;
+  }
+
+  .neo-nav-btn span {
+    display: inline-block !important;
+  }
+
+  .neo-nav-btn .anticon {
+    font-size: 14px !important;
+  }
+}
+
+/* ==========================================
+   SCROLL & SELECTION
+   ========================================== */
+
+::selection {
+  background: var(--neo-blue);
+  color: var(--neo-white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neo-gray);
+  border-left: var(--neo-border-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neo-black);
+  border: 2px solid var(--neo-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neo-blue);
+}
