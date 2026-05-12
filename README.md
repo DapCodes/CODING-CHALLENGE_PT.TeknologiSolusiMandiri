@@ -1,12 +1,10 @@
 # ⚡ Industrix Todo - Extreme Full Stack Management
 
-![Thumbnail](frontend/public/favicon.png)
-
 A high-performance, **Neo-Brutalist** Full-Stack Todo application designed for speed, clarity, and reliability. Built by **Daffa Ramadhan Maulana** as a technical demonstration of modern web architecture.
 
 ## 🔗 Live Deployment
 - **Frontend Link:** [https://coding-challenge-daffaramadhan.vercel.app](https://coding-challenge-daffaramadhan.vercel.app)
-- **Backend API Link:** [https://coding-challenge-ptteknologisolusimandiri-production.up.railway.app](https://coding-challenge-ptteknologisolusimandiri-production.up.railway.app)
+- **Backend API Link:** [https://coding-challengeptteknologisolusimandiri-production.up.railway.app](https://coding-challengeptteknologisolusimandiri-production.up.railway.app)
 - **Database:** Neon Serverless PostgreSQL (Singapore Region)
 
 ---
